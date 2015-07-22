@@ -1,0 +1,163 @@
+.brand{
+	width: 50px;
+	margin: 50px auto 0 auto;
+	display: block;
+	svg{
+		width: 50px;
+		fill: $brand-primary;
+	}
+
+}
+nav{
+	.menu-primary-container{
+
+	}
+}
+ul#menu-primary{
+  padding: 100px;
+    @media #{$small-only} { 
+      padding: 36px 100px;
+  }
+	li{
+		list-style: none;
+		margin: 150px 0 0 0;
+		padding: 0;
+    text-align: center;
+    transition: all .5s ease;
+		a{
+			color: white;
+      font-size: 22px;
+      font-weight: 100;
+      letter-spacing: 1px;
+      @media #{$small-only} { 
+            font-weight: 200;
+      }
+      @media #{$medium-only} { 
+            font-weight: 200;
+      }
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+/* clsoe button */
+$button-size : 2rem; 
+$transition: .5s ease; // increase this to see the transformations in slow-motion
+
+button.lines-button {
+  outline: none;
+  position: absolute;
+  z-index: 9999;
+  top: 45px;
+  right: 45px;
+  display: inline-block;
+  padding: $button-size/2 $button-size/4;
+  transition: $transition;
+  cursor: pointer;
+  user-select: none;
+  border-radius: $button-size/7;
+  background: none;
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    transition: 0;
+    background: rgba(0,0,0,.1);
+  }
+   @media #{$small-only} { 
+    right: 30px;
+  }
+}
+
+@mixin line {
+  display: inline-block;
+  width: $button-size;
+  height: $button-size/10;
+       background: #999999;
+  border-radius: $button-size/14; 
+  transition: $transition;
+}
+
+.lines {
+   
+  //create middle line
+  @include line;
+  position: relative; 
+ 
+  /*create the upper and lower lines as pseudo-elements of the middle line*/
+  &:before, &:after {
+   
+   @include line;
+    position: absolute;
+    left:0;
+    content: '';
+    transform-origin: $button-size/14 center;
+  }
+  &:before { top: $button-size/4; }
+  &:after { top: -$button-size/4; }
+}
+
+button.lines-button:hover {
+  opacity: 1;
+     
+  .lines {
+    &:before { top: $button-size/3.5; }
+    &:after { top: -$button-size/3.5; }
+  }
+}
+
+button.lines-button.x.close .lines{
+ 
+    /*hide the middle line*/
+    background: transparent;
+ 
+    /*overlay the lines by setting both their top values to 0*/
+    &:before, &:after{
+      transform-origin: 50% 50%;
+      top:0;
+      width: $button-size;
+      background-color: white;
+    }
+ 
+    // rotate the lines to form the x shape
+    &:before{
+      transform: rotate3d(0,0,1,45deg); 
+    }
+    &:after{
+      transform: rotate3d(0,0,1,-45deg); 
+    }
+}
+
+
+nav{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: white;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: -1;
+	transition: background-color .5s ease;
+
+}
+nav.overlay{
+	background-color: $brand-primary;
+	display: block;
+	opacity: 1;
+	z-index: 1000;
+ul#menu-primary{
+
+  li{
+    margin: 20px 0 0 0;
+
+  }
+}
+}

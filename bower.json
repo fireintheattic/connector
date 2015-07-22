@@ -1,0 +1,24 @@
+{
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "modernizr": "2.8.2",
+    "foundation": "5.5.2"
+  },
+  "overrides": {
+    "modernizr": {
+      "main": "./modernizr.js"
+    },
+    "foundation": {
+      "main": [
+        "./scss/foundation.scss",
+        "./js/foundation.js"
+      ]
+    }
+  }
+}

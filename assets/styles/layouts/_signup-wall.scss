@@ -1,0 +1,164 @@
+body.page-template-signup-wall{
+	background: transparent no-repeat;
+	background-size: contain;
+	background-color: $brand-primary;
+	header{
+		position: fixed;
+		z-index: 100;
+		display: none;
+	}
+
+}
+body.page-template-signup-wall{
+	h1{
+		font-size: 34px;
+		font-weight: 100;
+		letter-spacing: 1px;
+		color: #a6a2a2;
+		text-align: left;
+		opacity: 0;
+		transition: all .5s ease;
+		transform: translate(40px,0);
+	}
+	p{
+		font-size: 14px;
+		line-height: 24px;
+		letter-spacing: 1px;
+		color: #a6a2a2;
+		font-weight: 100;
+		opacity: 0;
+		transition: all .5s ease;
+		transform: translate(40px,0);
+
+	}
+	form{
+		transition: all .5s ease;
+
+		transform: translate(40px,0);
+		opacity: 0;
+
+	}
+	.main{
+		@include grid-row($behavior: nest); // Other options include collapse and nest-collapse.
+	}
+	.bigimage{
+		height: 100%;
+		background-size: cover;
+		background-repeat: none;
+		opacity: 0;
+		transition: all .5s ease;
+	}
+	.introduction{
+	  position: relative;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  @media #{$medium-only} { 
+	  	color: white !important;
+	  	bottom: 200px;
+	  	background-color: transparent;
+	  	top: auto;
+	  }
+	  @media #{$small-only} { 
+	  	color: white !important;
+	  	bottom: 200px;
+	  	background-color: transparent;
+	  	top: auto;
+	  }
+	  .introtext{
+	  	padding-left: 30px;
+	  	max-width: 500px;
+	  			transition: all .5s ease;
+
+	   @media #{$medium-only} { 
+			color: white;
+			h1{
+				color: white;
+												font-weight: 200;
+
+			}
+			p{
+				color: white;
+								font-weight: 200;
+
+			}
+		}
+	   @media #{$small-only} { 
+	   		width: 340px;
+			color: white;
+			h1{
+				color: white;
+				font-weight: 100;
+			}
+			p{
+				color: white;
+				font-weight: 200;
+			}
+		}
+	  }
+	}
+	.logo{
+			transition: all .5s ease;
+			width: 50px;
+			  margin-bottom: -25px;
+			  margin-left: -5px;
+			  opacity: 0;
+			  transform: scale(5.5) rotate(-180deg);
+		svg{
+			fill: $brand-primary;
+
+		}
+	}
+
+}
+
+body.page-template-signup-wall.loaded{
+	background-color: transparent;
+		transition: all .5s ease;
+	@media #{$medium-only} { 
+		transition-delay: 1s;
+		background-color: black;
+	}
+	@media #{$small-only} { 
+									transition-delay: 1s;
+
+		background-color: black;
+
+	}
+	.logo{
+		opacity: 1;
+		transform: scale(1) rotate(0deg);
+		&:hover{
+				transform: scale(1.2) rotate(0deg);
+	
+		}
+	}
+	.bigimage{
+		transition-delay: .5s;
+		opacity: 1;
+		@media #{$medium-only} { 
+					transition-delay: 0;
+
+			opacity: 0.4;
+		}
+		@media #{$small-only} { 
+			transition-delay: 0;
+
+			opacity: 0.4;
+		}
+	}
+	h1{
+		opacity: 1;
+		transform: translate(0,0);
+
+	}
+	p{
+		transition-delay: .25s;
+		opacity: 1;
+		transform: translate(0,0);
+	}
+	form{
+		transition-delay: .5s;
+		opacity: 1;
+		transform: translate(0,0);
+	}
+}

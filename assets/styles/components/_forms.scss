@@ -1,0 +1,24 @@
+ 	input[type=submit]{
+		border-radius: 500px;
+		border-color: $brand-primary;
+			  @media #{$small-only} { 
+  width: 100px;
+  padding: 0;
+  text-align: center;
+}
+	}
+	 	input[type=email]{
+		border-radius: 500px;
+	}
+	span.wpcf7-form-control-wrap{
+		width: 95%;
+		float: left;
+	}
+
+	div.wpcf7-response-output{
+		display: none !important;
+
+	}
+	span.wpcf7-not-valid-tip{
+		transition: all .5s ease;
+	}

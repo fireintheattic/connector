@@ -1,0 +1,104 @@
+.post-banner{
+	height: 500px;
+	width: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	margin-bottom: 50px; 
+	@media #{$small-only} { 
+		height: 160px; 
+		background-size: cover;		
+	}
+}
+h1.entry-title{
+	margin-bottom: 50px;
+}
+h1.smallHeader{
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: 500;
+	margin-top: 40px;
+		@media #{$small-only} { 
+			margin-top: 20px;
+		}
+}
+.waypoints{
+	margin-top: 50px;
+	.wayprev{
+		text-align: right;
+		margin: 0 0 200px 0;
+		padding: 0;
+		a{
+			border-right: none;
+			text-align: right;
+
+		}
+	    @media #{$small-only} { 
+			margin:0;
+			a{
+				text-align: left;
+			}
+		}
+	}
+	.waynext{
+		text-align: left;
+		margin: 0 0 200px 0;
+		padding: 0;
+		a{
+			text-align: left;
+		}
+		@media #{$small-only} { 
+			margin: -1px 0 0 0;
+			a{
+				text-align: right;
+			}
+		} 
+
+	}
+	a{
+			border: 1px solid #e8e8e8;
+
+		transition: all .5s ease;
+		display: block;
+		padding: 30px 25px;
+		font-size: 18px;
+		color: #666666;
+		&:hover{
+			background-color: $brand-primary;
+			color: white;
+			span{
+				color: white;
+			}
+		}
+		span{
+			display: block;
+			font-weight: 600;
+			font-size: 8px;
+			color: #666666;
+			text-transform: uppercase;
+			padding-bottom: 5px;
+		}
+	}
+}
+.poster{
+	padding: 45px 0;
+	h2.entry-title{
+		a{
+			transition: all .5s ease;
+			letter-spacing: 1px;
+			color: #333333;
+			font-weight: 300;
+			font-size: 34px;
+		&:hover{
+			color: $brand-primary;
+		}
+		}
+
+
+	}
+}
+		.entry-summary{
+			p{
+				color: #666666 !important;
+			}
+			}
